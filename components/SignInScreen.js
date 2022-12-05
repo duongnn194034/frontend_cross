@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useNavigate} from "react";
 import { Text, View, Imag, StyleSheet, useWindowDimensions } from "react-native";
 import Logo from "./assets/images/Facebook_f_logo_(2019).svg.png";
 import CustomInput from "./CustomInput";
@@ -9,14 +9,15 @@ const SignIn = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigate = useNavigate();
     const onSignInPressed = () => {
-        
+        navigate('/show');
     };
     const onForgotPasswordPressed = () => {
-        
+        navigate('')
     };
     const onSignUpPressed = () => {
-
+        navigate('/register')
     };
 
 
