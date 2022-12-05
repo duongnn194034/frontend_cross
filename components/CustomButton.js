@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 
-const CustomButton = ({backgroundColor, onPress, text}) => {
+const CustomButton = ({onPress, text, type="PRIMARY"}) => {
     return (
-        <Pressable onPress={onPress} style={[styles.container, {backgroundColor: {backgroundColor}}]}>
-            <Text style={styles.text}>{text}</Text>
+        <Pressable onPress={onPress} style={[styles.container, styles[`container_${type}`]]}>
+            <Text style={[styles.text, text[`text_${type}`]]}>{text}</Text>
         </Pressable>
     )
 }
@@ -17,9 +17,26 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 5
     },
+    container_PRIMARY: {
+        backgroundColor: '#3B71F3'
+    },
+    container_SECONDARY: {
+        backgroundColor: '#03C04A'
+    },
+    container_TERTIARY: {
+    
+    },
     text: {
         fontWeight: 'bold',
-        color: 'white'
+    },
+    text_PRIMARY: {
+        color: '#FFFFFF'
+    },
+    text_SECONDARY: {
+        color: '#FFFFFF'
+    },
+    text_TERTIARY: {
+        color: '#1338BE'
     }
 });
 

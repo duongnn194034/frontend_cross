@@ -10,12 +10,15 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
 
     const onSignInPressed = () => {
-
+        
     };
-    
     const onForgotPasswordPressed = () => {
+        
+    };
+    const onSignUpPressed = () => {
 
     };
+
 
     return (
         <View>
@@ -36,14 +39,19 @@ const SignIn = () => {
                 secureTextEntry
             />
             <CustomButton
+                style={signInButton}
                 text="Đăng nhập"
                 onPress={onSignInPressed}
-                backgroundColor='#3B71F3' 
             />
             <CustomButton
                 text="Quên mật khẩu"
                 onPress={onForgotPasswordPressed}
-                backgroundColor='#3B71F3'
+                type="TERTIARY"
+            />
+            <CustomButton
+                text="Tạo tài khoản mới"
+                onPress={onSignUpPressed}
+                type="SECONDARY"
             />
         </View>
     );
@@ -58,6 +66,9 @@ const styles = StyleSheet.create({
         width: '70%',
         maxWidth: 300,
         height: 100
+    },
+    signInButton: {
+        marginTop: 30
     }
 })
 
